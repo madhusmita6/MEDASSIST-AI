@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "medassist-ai"
+version = "0.1.0"
+description = "Secure Healthcare Concierge Agent"
+authors = ["MedAssist AI Team <support@medassist.ai>"]
+readme = "README.md"
+packages = [{include = "backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = "^0.28.0"
+pydantic = "^2.6.4"
+pydantic-settings = "^2.2.1"
+sqlalchemy = "^2.0.28"
+psycopg2-binary = "^2.9.9"
+alembic = "^1.13.1"
+chromadb = "^0.4.24"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-multipart = "^0.0.9"
+bcrypt = "^4.1.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+pytest-asyncio = "^0.23.5"
+black = "^24.2.0"
+flake8 = "^7.0.0"
+mypy = "^1.9.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+pythonpath = ["backend"]
+asyncio_mode = "auto"

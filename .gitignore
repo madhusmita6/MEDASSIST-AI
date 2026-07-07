@@ -1,0 +1,17 @@
+# Python files
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+test.db
+
+# Frontend Node/Build files
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
